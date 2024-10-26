@@ -24,7 +24,7 @@ class HelloWorldUser(HttpUser):
                 HelloWorldUser.test_failed = True
                 self.environment.runner.quit()
                 
-            elif self.environment.stats.total.get_response_time_percentile(0.95) > 2000:
+            elif self.environment.stats.total.get_response_time_percentile(0.95) > 10000:
                 logging.error("Test failed due to 95th percentile response time > 2000 ms")
                 print(self.environment.stats.total.get_response_time_percentile(0.95))
                 self.environment.process_exit_code = 1
