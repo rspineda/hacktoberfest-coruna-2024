@@ -3,6 +3,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: hacktoberfest-nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
   name: hello-app
   namespace: hacktoberfest
 spec:
